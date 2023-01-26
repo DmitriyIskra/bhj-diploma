@@ -33,7 +33,7 @@ class User {
    * Возвращает текущего авторизованного пользователя
    * из локального хранилища
    * */
-  static current() {
+  static current() { 
     return localStorage.user
   }
 
