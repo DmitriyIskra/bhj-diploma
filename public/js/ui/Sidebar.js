@@ -27,7 +27,7 @@ class Sidebar {
   };
 
   /**
-   * При нажатии на кнопку входа, показывает окно входа
+   * При нажатии на кнопку входа, показывает окно входа 
    * (через найденное в App.getModal)
    * При нажатии на кнопку регастрации показывает окно регистрации
    * При нажатии на кнопку выхода вызывает User.logout и по успешному
@@ -44,6 +44,8 @@ class Sidebar {
       modalLogin.registerEvents();
     });
 
+
+
     document.querySelector('.menu-item_register > a').addEventListener('click', e => {
       e.preventDefault();
       let el = App.getModal('register')
@@ -52,6 +54,21 @@ class Sidebar {
       modalRegister.open();
 
       modalRegister.registerEvents();
+    });
+
+
+
+    document.querySelector('.menu-item_logout > a').addEventListener('click', e => {
+      e.preventDefault();
+
+      const callback = (err, response) => {
+        if(response.success) {
+          App.setState( 'init' );
+          User.unsetCurrent();
+        };
+      }
+
+      User.logout(callback);
     });
   };
 };

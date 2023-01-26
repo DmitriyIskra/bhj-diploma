@@ -42,7 +42,7 @@ class User {
    * авторизованном пользователе.
    * */
   static fetch(callback) {
-    console.log(callback())
+    callback()
   }
 
   /**
@@ -96,6 +96,14 @@ class User {
    * выхода необходимо вызвать метод User.unsetCurrent
    * */
   static logout(callback) {
+    createRequest({
+      url: '/user' + '/logout',
+      method: 'POST',
+      responseType: 'json',
+      callback: (err, response) => { 
+        callback(err, response);
+      }
+    })
     // Метод запускает выполнение функции createRequest. После успешного выхода необходимо вызвать метод User.unsetCurrent.
   }
 }
