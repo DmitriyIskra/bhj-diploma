@@ -58,6 +58,21 @@
       "name": "Бизнес",
       "user_id": "1",
       "id": "3"
+    },
+    {
+      "name": "Alfa",
+      "user_id": "1e41a979cldalease",
+      "id": "1e41a988oldeuq5hk"
+    },
+    {
+      "name": "Omega",
+      "user_id": "1e41a979cldalease",
+      "id": "1e41a9130ldex1dob"
+    },
+    {
+      "name": "Сбер",
+      "user_id": "1e41a979cldalease",
+      "id": "1e41a92holdex2a1m"
     }
   ],
   "transactions": [

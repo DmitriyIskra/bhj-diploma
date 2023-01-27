@@ -12,8 +12,7 @@ class Modal {
    * необходимо выкинуть ошибку.
    * */
   constructor(element){
-    this.activeElement = element
-    // console.log(this.activeElement)
+    this.activeElement = element;
   }
   
   /**

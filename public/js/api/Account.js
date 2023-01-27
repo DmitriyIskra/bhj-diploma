@@ -7,7 +7,13 @@ class Account extends Entity {
   /**
    * Получает информацию о счёте
    * */
-  static get(id = '', callback){
-    // Содержит 1 статический метод: get. Метод запускает функцию createRequest.
+  constructor() {
+    super();
+    this.URL = '/account';
   }
+
+  static get(id = '', callback){
+    
+    // Содержит 1 статический метод: get. Метод запускает функцию createRequest.
+  } 
 }

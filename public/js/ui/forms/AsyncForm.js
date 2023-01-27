@@ -5,7 +5,7 @@
  * с таких форм собираются и передаются в метод onSubmit
  * для последующей обработки
  * */
-class AsyncForm { 
+class AsyncForm {  
   /**
    * Если переданный элемент не существует,
    * необходимо выкинуть ошибку.
@@ -30,7 +30,7 @@ class AsyncForm {
   registerEvents() {
     this.element.addEventListener('submit', e => {
       e.preventDefault();
-      
+
       this.submit()
     })
   }

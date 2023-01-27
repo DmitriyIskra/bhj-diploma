@@ -37,6 +37,7 @@ const createRequest = (options = {}) => {
         if(xhr.readyState === xhr.DONE && xhr.status === 200) {
             if(xhr.response.success === true) {
                 options.callback(null, xhr.response);
+                console.log('ответ', xhr)
             }
             else {
                 options.callback(xhr.response.error);
