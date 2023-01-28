@@ -11,7 +11,7 @@ class TransactionsPage {
    * через registerEvents()
    * */
   constructor( element ) {
-
+    this.element = element;
   }
 
   /**
@@ -61,7 +61,7 @@ class TransactionsPage {
    * в TransactionsPage.renderTransactions()
    * */
   render(options){
-
+    console.log(options)
   }
 
   /**

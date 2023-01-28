@@ -36,6 +36,8 @@ class AccountsWidget {
    * */
   registerEvents() {
     this.element.addEventListener('click', e => {
+      e.preventDefault();
+
       if(e.target.matches('.create-account')) {
         const el = App.getModal('createAccount');
         const modalCreateAccaunt = new Modal(el.activeElement);
@@ -44,7 +46,10 @@ class AccountsWidget {
         modalCreateAccaunt.registerEvents();
       }
 
-      this.onSelectAccount(this.element);
+      if(e.target.closest('.account')) {
+        this.onSelectAccount(e.target.closest('.account'));
+      }
+      
     });
   };
 
@@ -99,20 +104,13 @@ class AccountsWidget {
    * Вызывает App.showPage( 'transactions', { account_id: id_счёта });   ???????????
    * */
   onSelectAccount(element) {
-    element.addEventListener('click', e => {
-      if(e.target.closest('.account')) {
-        e.preventDefault();
-
-        if(element.querySelector('.active')) {
-          element.querySelector('.active').classList.remove('active');
-        };
-
-        e.target.closest('.account').classList.add('active');
-        console.log(e.target.closest('.account').dataset.id)
-        let account_id = e.target.closest('.account').dataset.id;
-        App.showPage( 'transactions', { account_id:  account_id});
+      if(this.element.querySelector('.active')) {
+        this.element.querySelector('.active').classList.remove('active');
       };
-    });
+
+      element.classList.add('active');
+
+      App.showPage( 'transactions', { account_id:  element.dataset.id});
   };
 
   /**
