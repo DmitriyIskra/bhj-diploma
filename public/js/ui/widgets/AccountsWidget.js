@@ -24,6 +24,7 @@ class AccountsWidget {
     };
 
     this.registerEvents();
+    this.onSelectAccount(element);
   };
 
   /**
@@ -65,10 +66,13 @@ class AccountsWidget {
       };
 
       const callback = (err, response) => {
-        
-      }
+        if(response.success) {
+          this.clear();
+          this.renderItem(response.data);
+        };
+      };
 
-      Account.list(data, callback)
+      Account.list(data, callback);
       // очистить список отображённых счетов через AccountsWidget.clear()
       // Отображает список полученных счетов с помощью метода renderItem()
     }
@@ -92,18 +96,19 @@ class AccountsWidget {
    * счёта класс .active.
    * Вызывает App.showPage( 'transactions', { account_id: id_счёта });   ???????????
    * */
-  onSelectAccount( element ) {
+  onSelectAccount(element) {
+    element.addEventListener('click', e => {
+      if(e.target.closest('.account')) {
+        e.preventDefault();
 
-    if(this.element.querySelector('.active')) {
-      this.element.querySelector('.active').classList.remove('active');
-    }
+        if(element.querySelector('.active')) {
+          element.querySelector('.active').classList.remove('active');
+        };
 
-    this.element.addEventListener('click', e => {
-      if(e.target.matches('.account')) {
-        e.target.classList.add('active');
-      }
-    })
-  }
+        e.target.closest('.account').classList.add('active');
+      };
+    });
+  };
 
   /**
    * Возвращает HTML-код счёта для последующего
@@ -111,15 +116,30 @@ class AccountsWidget {
    * item - объект с данными о счёте
    * */
   getAccountHTML(item){
-    itemObj = JSON.parse(item)
-    let stringItem = `<li class="active account" data-id="35">
-                        <a href="#">
-                        <span>${itemObj.name}</span> /
-                        <span>${itemObj.sum} ₽</span>
-                        </a>
-                      </li>`;
 
-    return stringItem;
+    let li = document.createElement('li');
+    li.classList.add('account');
+    li.setAttribute('data-id', `${item.id}`);
+
+    let a = document.createElement('a');
+    a.setAttribute('href', `#`);
+    a.style.display = 'flex'
+    a.style.justifyContent = 'space-between'
+
+    let spanName = document.createElement('span');
+    spanName.textContent = `${item.name} `;
+
+    let valute = '₽'
+    let spanSum = document.createElement('span');
+    spanSum.textContent = `${item.sum} ${valute}`
+    spanSum.style.marginRight = '10px'
+
+    li.append(a);
+    a.append(spanName);
+    a.append(spanSum);
+
+    return li;
+    // Возможно нужно будет вызывать onSelectAccount
   }
 
   /**
@@ -129,6 +149,11 @@ class AccountsWidget {
    * и добавляет его внутрь элемента виджета
    * */
   renderItem(data){
+    // перебирать массив с информацией о счетах и каждый раз вызывать getAccountHTML и передавать в item данные для подстановки, и добавлением в this.element
+    data.forEach( el => {
+      const itemLi = this.getAccountHTML(el);
 
-  }
+      this.element.append(itemLi);
+    });
+  };
 }

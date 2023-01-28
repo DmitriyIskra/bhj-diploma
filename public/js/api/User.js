@@ -13,8 +13,6 @@ class User {
     const responseUser = {
       id: user.id,
       name: user.name,
-      email: user.email,
-      password: user.password,
     };
 
     let userString = JSON.stringify(responseUser);
