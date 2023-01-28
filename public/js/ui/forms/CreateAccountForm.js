@@ -11,12 +11,11 @@ class CreateAccountForm extends AsyncForm {
   onSubmit(data) {
     const callback = (err, response) => {
       if(response.success) {
+        App.modals.createAccount.activeElement.querySelector('#new-account-form').reset();
+        App.modals.createAccount.activeElement.style.display = 'none';
+
         App.update();
       };
-    /**
-    * закрывает окно в случае успеха, а также вызывает App.update()
-    * и сбрасывает форму
-    * */
     };
     
     Account.create(data, callback);

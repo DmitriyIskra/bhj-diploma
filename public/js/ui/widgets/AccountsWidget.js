@@ -24,15 +24,15 @@ class AccountsWidget {
     };
 
     this.registerEvents();
-    this.onSelectAccount(element);
+    this.update();
   };
 
   /**
-   * При нажатии на .create-account открывает окно    /////////
-   * #modal-new-account для создания нового счёта     /////////
-   * При нажатии на один из существующих счетов       ???????
-   * (которые отображены в боковой колонке),          ???????
-   * вызывает AccountsWidget.onSelectAccount()        ??????
+   * При нажатии на .create-account открывает окно    
+   * #modal-new-account для создания нового счёта    
+   * При нажатии на один из существующих счетов       
+   * (которые отображены в боковой колонке),          
+   * вызывает AccountsWidget.onSelectAccount()        
    * */
   registerEvents() {
     this.element.addEventListener('click', e => {
@@ -43,6 +43,8 @@ class AccountsWidget {
 
         modalCreateAccaunt.registerEvents();
       }
+
+      this.onSelectAccount(this.element);
     });
   };
 
@@ -106,6 +108,9 @@ class AccountsWidget {
         };
 
         e.target.closest('.account').classList.add('active');
+        console.log(e.target.closest('.account').dataset.id)
+        let account_id = e.target.closest('.account').dataset.id;
+        App.showPage( 'transactions', { account_id:  account_id});
       };
     });
   };
