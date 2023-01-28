@@ -61,7 +61,13 @@ class TransactionsPage {
    * в TransactionsPage.renderTransactions()
    * */
   render(options){
-    console.log(options)
+    console.log(options) // {account_id: '1e41a988oldeuq5hk'}
+
+    const callback = (err, response) => {
+      
+    }
+
+    Account.get(options.account_id, callback);
   }
 
   /**

@@ -22,7 +22,7 @@ class Entity {
       callback: (err, response) => {
         callback(err, response);
       }
-    })
+    });
     // Метод посылает GET запрос на адрес, заданный URL. Метод запускает выполнение функции createRequest.
   }
 
