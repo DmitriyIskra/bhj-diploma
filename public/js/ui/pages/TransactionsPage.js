@@ -12,6 +12,7 @@ class TransactionsPage {
    * */
   constructor( element ) {
     this.element = element;
+    this.contentTitle = this.element.querySelector('.content-title')
   }
 
   /**
@@ -61,13 +62,31 @@ class TransactionsPage {
    * в TransactionsPage.renderTransactions()
    * */
   render(options){
-    console.log(options) // {account_id: '1e41a988oldeuq5hk'}
+        // Title
+    const callbackForTitle = (err, response) => {
+      if(response.success) {
+        this.renderTitle(response.data.name);
+      };
+    };
 
-    const callback = (err, response) => {
-      
-    }
+    Account.get(options.account_id, callbackForTitle);
 
-    Account.get(options.account_id, callback);
+
+        // Transactions
+    const callbackForList = (err, response) => {
+      if(response.success) {
+        this.renderTransactions(response.data);
+      };
+    };
+
+    const dataUser = JSON.parse(localStorage.user);
+
+      const data = {
+        email: dataUser.email,
+        password: dataUser.password,
+      };
+
+    Transaction.list(data, callbackForList);
   }
 
   /**
@@ -83,7 +102,7 @@ class TransactionsPage {
    * Устанавливает заголовок в элемент .content-title
    * */
   renderTitle(name){
-
+    this.contentTitle.textContent = name;
   }
 
   /**
@@ -107,6 +126,8 @@ class TransactionsPage {
    * используя getTransactionHTML
    * */
   renderTransactions(data){
-
-  }
+    data.forEach( el => {
+      getTransactionHTML(el);
+    });
+  };
 }
