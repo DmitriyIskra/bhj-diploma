@@ -14,8 +14,6 @@ class CreateTransactionForm extends AsyncForm {
 
     this.element = element;
 
-    console.log(element)
-
     this.renderAccountsList();
   }
 
@@ -34,21 +32,18 @@ class CreateTransactionForm extends AsyncForm {
     
     const callback = (err, response) => {
       if(response.success) {
+        const collectionOption = this.element[3].querySelectorAll('option');
+        collectionOption.forEach( el => el.remove());
 
         response.data.forEach( el => {
           const option = document.createElement('option');
           option.setAttribute('value', `${el.id}`);
           option.textContent = `${el.name}`;
 
-          if(this.element.querySelector('#income-accounts-list') && (this.element[3].length != response.data.length)) {
-            this.element[3].append(option)
-          }
-          else if(this.element.querySelector('#expense-accounts-list') && (this.element[3].length != response.data.length)) {
-            this.element[3].append(option)
-          };
+          this.element[3].append(option);
         });
       };
-      // здесь будет обновление выпадающего списка, есть 2 формы обновлять нужно в обеих
+      
     }
 
     Account.list(data, callback)
@@ -61,6 +56,18 @@ class CreateTransactionForm extends AsyncForm {
    * в котором находится форма
    * */
   onSubmit(data) {
+    const callback = (err, response) => {
+      if(response.success) {
+        this.element.reset();
+        this.element.closest('.modal').style.display = 'none';
+        // App.modals.createAccount.activeElement.style.display = 'none';
 
+        App.update();
+      };
+    };
+    
+    const formData = new FormData(this.element)
+
+    Transaction.create(formData, callback);
   }
 }

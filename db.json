@@ -103,6 +103,21 @@
       "name": "e",
       "user_id": "1e41a979cldalease",
       "id": "1e41a91wgldgaf3qk"
+    },
+    {
+      "name": "abra",
+      "user_id": "1e41a979cldalease",
+      "id": "1e41a98t0ldhh3b9t"
+    },
+    {
+      "name": "dfb",
+      "user_id": "1e41a979cldalease",
+      "id": "1e41a95bsldhh47xn"
+    },
+    {
+      "name": "pram",
+      "user_id": "1e41a979cldalease",
+      "id": "1e41a9ah4ldhhf2mp"
     }
   ],
   "transactions": [
@@ -240,6 +255,60 @@
       "sum": 300000,
       "type": "expense",
       "user_id": "1"
+    },
+    {
+      "id": "1e41a96ngldhi57hg",
+      "type": "income",
+      "name": "Зарплата",
+      "sum": 50,
+      "account_id": "1e41a988oldeuq5hk",
+      "user_id": "1e41a979cldalease",
+      "created_at": "2023-01-29T14:53:37.443Z"
+    },
+    {
+      "id": "1e41a98tcldhi98ml",
+      "type": "income",
+      "name": "зп",
+      "sum": 45,
+      "account_id": "1e41a988oldeuq5hk",
+      "user_id": "1e41a979cldalease",
+      "created_at": "2023-01-29T14:56:45.548Z"
+    },
+    {
+      "id": "1e41a91loldhidq3d",
+      "type": "income",
+      "name": "pg",
+      "sum": 345,
+      "account_id": "1e41a988oldeuq5hk",
+      "user_id": "1e41a979cldalease",
+      "created_at": "2023-01-29T15:00:14.808Z"
+    },
+    {
+      "id": "1e41a95vsldhie32u",
+      "type": "expense",
+      "name": "обед",
+      "sum": 50,
+      "account_id": "1e41a988oldeuq5hk",
+      "user_id": "1e41a979cldalease",
+      "created_at": "2023-01-29T15:00:31.637Z"
+    },
+    {
+      "id": "1e41a948wldhix8i7",
+      "type": "income",
+      "name": "продажа",
+      "sum": 234,
+      "account_id": "1e41a988oldeuq5hk",
+      "user_id": "1e41a979cldalease",
+      "created_at": "2023-01-29T15:15:25.134Z"
+    },
+    {
+      "id": "1e41a955cldhiy1gt",
+      "type": "income",
+      "name": "вам",
+      "sum": 456,
+      "account_id": "1e41a988oldeuq5hk",
+      "user_id": "1e41a979cldalease",
+      "created_at": "2023-01-29T15:16:02.668Z"
     }
   ]
 }
