@@ -309,6 +309,60 @@
       "account_id": "1e41a988oldeuq5hk",
       "user_id": "1e41a979cldalease",
       "created_at": "2023-01-29T15:16:02.668Z"
+    },
+    {
+      "id": "1e41a963sldhj2p8k",
+      "type": "expense",
+      "name": "пирожок",
+      "sum": 80,
+      "account_id": "1e41a988oldeuq5hk",
+      "user_id": "1e41a979cldalease",
+      "created_at": "2023-01-29T15:19:40.099Z"
+    },
+    {
+      "id": "1e41a98cgldj0ruum",
+      "type": "income",
+      "name": "taxi",
+      "sum": 300,
+      "account_id": "1e41a9130ldex1dob",
+      "user_id": "1e41a979cldalease",
+      "created_at": "2023-01-30T16:22:53.421Z"
+    },
+    {
+      "id": "1e41a9am0ldj0syv9",
+      "type": "expense",
+      "name": "мороженко",
+      "sum": 50,
+      "account_id": "1e41a9130ldex1dob",
+      "user_id": "1e41a979cldalease",
+      "created_at": "2023-01-30T16:23:45.284Z"
+    },
+    {
+      "id": "1e41a94isldj5mpga",
+      "type": "income",
+      "name": "Продал тапки",
+      "sum": 150,
+      "account_id": "1e41a9130ldex1dob",
+      "user_id": "1e41a979cldalease",
+      "created_at": "2023-01-30T18:38:51.225Z"
+    },
+    {
+      "id": "1e41a97wldj5nssa",
+      "type": "expense",
+      "name": "купил тапки",
+      "sum": 50,
+      "account_id": "1e41a9130ldex1dob",
+      "user_id": "1e41a979cldalease",
+      "created_at": "2023-01-30T18:39:42.202Z"
+    },
+    {
+      "id": "1e41a95l0ldj5qfvd",
+      "type": "income",
+      "name": "Продал кота",
+      "sum": 1000,
+      "account_id": "1e41a9130ldex1dob",
+      "user_id": "1e41a979cldalease",
+      "created_at": "2023-01-30T18:41:45.432Z"
     }
   ]
 }

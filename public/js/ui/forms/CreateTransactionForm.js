@@ -23,30 +23,36 @@ class CreateTransactionForm extends AsyncForm {
    * */
   renderAccountsList() {
 
-    const dataUser = JSON.parse(localStorage.user);
+    if(localStorage.user) {
+      const dataUser = JSON.parse(localStorage.user);
 
       const data = {
         email: dataUser.email,
         password: dataUser.password,
       };
-    
-    const callback = (err, response) => {
-      if(response.success) {
-        const collectionOption = this.element[3].querySelectorAll('option');
-        collectionOption.forEach( el => el.remove());
 
-        response.data.forEach( el => {
-          const option = document.createElement('option');
-          option.setAttribute('value', `${el.id}`);
-          option.textContent = `${el.name}`;
-
-          this.element[3].append(option);
-        });
-      };
-      
+      const callback = (err, response) => {
+        if(response.success) {
+          const collectionOption = this.element[3].querySelectorAll('option');
+          collectionOption.forEach( el => el.remove());
+  
+          response.data.forEach( el => {
+            const option = document.createElement('option');
+            option.setAttribute('value', `${el.id}`);
+            option.textContent = `${el.name}`;
+  
+            this.element[3].append(option);
+          });
+        };
+        
+      }
+  
+      Account.list(data, callback)
     }
 
-    Account.list(data, callback)
+      
+    
+    
   }
 
   /**
@@ -60,7 +66,6 @@ class CreateTransactionForm extends AsyncForm {
       if(response.success) {
         this.element.reset();
         this.element.closest('.modal').style.display = 'none';
-        // App.modals.createAccount.activeElement.style.display = 'none';
 
         App.update();
       };

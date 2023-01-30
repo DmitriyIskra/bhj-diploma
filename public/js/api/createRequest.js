@@ -10,7 +10,16 @@ const createRequest = (options = {}) => {
     let xhr;
     xhr = new XMLHttpRequest();
     xhr.responseType = 'json';
-    if(options.method === "GET") {
+    if(options.method === "GET" && options.url === '/transaction') {
+        try{
+            xhr.open(options.method, `${options.url}?account_id=${options.data.account_id}`); 
+            xhr.send();
+        }
+        catch(error) {
+            console.log(error);
+        };
+    }
+    else if(options.method === "GET") {
 
         try{
             xhr.open(options.method, `${options.url}?mail=${options.data.email}&password=${options.data.password}`); 
