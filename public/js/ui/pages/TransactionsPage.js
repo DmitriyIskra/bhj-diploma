@@ -25,7 +25,7 @@ class TransactionsPage {
    * Вызывает метод render для отрисовки страницы
    * */
   update() {
-
+    this.render();
   }
 
   /**
@@ -35,7 +35,11 @@ class TransactionsPage {
    * TransactionsPage.removeAccount соответственно
    * */
   registerEvents() {
-
+    this.content.addEventListener('click', e => {
+      if(e.target.closest('.transaction__remove')) {
+        removeTransaction( e.target.closest('.transaction__remove').id )
+      }
+    })
   }
 
   /**
@@ -58,7 +62,13 @@ class TransactionsPage {
    * либо обновляйте текущую страницу (метод update) и виджет со счетами
    * */
   removeTransaction( id ) {
-    
+    let resultConfirm = confirm('Вы подтверждаете удаление транзакции?');
+
+    if(resultConfirm) {
+      let buttonId = this.content.querySelector(`[data-id="${id}"]`);
+      buttonId.closest('.transaction').remove();
+      App.update();
+    };
   }
 
   /**
