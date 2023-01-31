@@ -69,6 +69,9 @@ class CreateTransactionForm extends AsyncForm {
         this.element.closest('.modal').style.display = 'none';
 
         TransactionsPage.update;
+      }
+      else {
+        console.log(err)
       };
     };
     
