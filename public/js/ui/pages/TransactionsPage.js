@@ -15,17 +15,20 @@ class TransactionsPage {
       this.element = element;
     };
     
+    this.lastOptions = null;
     this.contentTitle = this.element.querySelector('.content-title');
     this.content = this.element.querySelector('.content');
 
-    // this.registerEvents();
+    this.registerEvents();
   }
 
   /**
    * Вызывает метод render для отрисовки страницы
    * */
   update() {
-    this.render();
+    if(this.lastOptions) {
+      this.render(this.lastOptions);
+    };  
   }
 
   /**
@@ -37,9 +40,16 @@ class TransactionsPage {
   registerEvents() {
     this.content.addEventListener('click', e => {
       if(e.target.closest('.transaction__remove')) {
-        removeTransaction( e.target.closest('.transaction__remove').id )
-      }
-    })
+        this.removeTransaction( e.target.closest('.transaction__remove').dataset.id )
+      };
+    });
+
+
+    this.content.previousElementSibling.addEventListener('click', e => {
+      if(e.target.closest('.remove-account')) {
+        this.removeAccount();
+      };
+    });
   }
 
   /**
@@ -52,7 +62,25 @@ class TransactionsPage {
    * для обновления приложения
    * */
   removeAccount() {
+    let resultConfirm = confirm('Вы действительно хотите удалить счёт?');
 
+    if(resultConfirm && this.lastOptions) {
+      const callback = (err, response) => {
+        if(response.success) {
+          App.updateWidgets();
+          App.updateForms();
+        }
+        else {
+          console.log(err);
+        };
+      };
+
+      const data = new FormData();
+      data.append('id', this.lastOptions.account_id);
+
+      Account.remove(data, callback);
+      this.clear();
+    };
   }
 
   /**
@@ -65,9 +93,21 @@ class TransactionsPage {
     let resultConfirm = confirm('Вы подтверждаете удаление транзакции?');
 
     if(resultConfirm) {
-      let buttonId = this.content.querySelector(`[data-id="${id}"]`);
-      buttonId.closest('.transaction').remove();
-      App.update();
+      const callback = (err, response) => {
+        if(response.success) {
+          App.update();
+          this.update();
+          console.log(response)
+        }
+        else {
+          console.log(err);
+        }
+      };
+
+      const data = new FormData();
+      data.append('id', id);
+
+      Transaction.remove(data, callback);
     };
   }
 
@@ -115,7 +155,8 @@ class TransactionsPage {
    * */
   clear() {
     this.renderTransactions([]);
-    this.renderTitle('Название счёта')
+    this.renderTitle('Название счёта');
+    this.lastOptions = null;
   }
 
   /**

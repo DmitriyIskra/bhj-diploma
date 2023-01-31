@@ -64,14 +64,15 @@ class CreateTransactionForm extends AsyncForm {
   onSubmit(data) {
     const callback = (err, response) => {
       if(response.success) {
+        App.update();
         this.element.reset();
         this.element.closest('.modal').style.display = 'none';
 
-        App.update();
+        TransactionsPage.update;
       };
     };
     
-    const formData = new FormData(this.element)
+    const formData = new FormData(this.element);
 
     Transaction.create(formData, callback);
   }

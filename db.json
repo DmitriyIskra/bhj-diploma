@@ -60,64 +60,9 @@
       "id": "3"
     },
     {
-      "name": "Alfa",
-      "user_id": "1e41a979cldalease",
-      "id": "1e41a988oldeuq5hk"
-    },
-    {
       "name": "Omega",
       "user_id": "1e41a979cldalease",
       "id": "1e41a9130ldex1dob"
-    },
-    {
-      "name": "Сбер",
-      "user_id": "1e41a979cldalease",
-      "id": "1e41a92holdex2a1m"
-    },
-    {
-      "name": "bam",
-      "user_id": "1e41a979cldalease",
-      "id": "1e41a92xgldga0000"
-    },
-    {
-      "name": "bank",
-      "user_id": "1e41a979cldalease",
-      "id": "1e41a94eoldga91ax"
-    },
-    {
-      "name": "s",
-      "user_id": "1e41a979cldalease",
-      "id": "1e41a94r8ldga9wel"
-    },
-    {
-      "name": "w",
-      "user_id": "1e41a979cldalease",
-      "id": "1e41a95b0ldgabg4d"
-    },
-    {
-      "name": "a",
-      "user_id": "1e41a979cldalease",
-      "id": "1e41a93noldgacp3w"
-    },
-    {
-      "name": "e",
-      "user_id": "1e41a979cldalease",
-      "id": "1e41a91wgldgaf3qk"
-    },
-    {
-      "name": "abra",
-      "user_id": "1e41a979cldalease",
-      "id": "1e41a98t0ldhh3b9t"
-    },
-    {
-      "name": "dfb",
-      "user_id": "1e41a979cldalease",
-      "id": "1e41a95bsldhh47xn"
-    },
-    {
-      "name": "pram",
-      "user_id": "1e41a979cldalease",
-      "id": "1e41a9ah4ldhhf2mp"
     }
   ],
   "transactions": [
@@ -257,87 +202,6 @@
       "user_id": "1"
     },
     {
-      "id": "1e41a96ngldhi57hg",
-      "type": "income",
-      "name": "Зарплата",
-      "sum": 50,
-      "account_id": "1e41a988oldeuq5hk",
-      "user_id": "1e41a979cldalease",
-      "created_at": "2023-01-29T14:53:37.443Z"
-    },
-    {
-      "id": "1e41a98tcldhi98ml",
-      "type": "income",
-      "name": "зп",
-      "sum": 45,
-      "account_id": "1e41a988oldeuq5hk",
-      "user_id": "1e41a979cldalease",
-      "created_at": "2023-01-29T14:56:45.548Z"
-    },
-    {
-      "id": "1e41a91loldhidq3d",
-      "type": "income",
-      "name": "pg",
-      "sum": 345,
-      "account_id": "1e41a988oldeuq5hk",
-      "user_id": "1e41a979cldalease",
-      "created_at": "2023-01-29T15:00:14.808Z"
-    },
-    {
-      "id": "1e41a95vsldhie32u",
-      "type": "expense",
-      "name": "обед",
-      "sum": 50,
-      "account_id": "1e41a988oldeuq5hk",
-      "user_id": "1e41a979cldalease",
-      "created_at": "2023-01-29T15:00:31.637Z"
-    },
-    {
-      "id": "1e41a948wldhix8i7",
-      "type": "income",
-      "name": "продажа",
-      "sum": 234,
-      "account_id": "1e41a988oldeuq5hk",
-      "user_id": "1e41a979cldalease",
-      "created_at": "2023-01-29T15:15:25.134Z"
-    },
-    {
-      "id": "1e41a955cldhiy1gt",
-      "type": "income",
-      "name": "вам",
-      "sum": 456,
-      "account_id": "1e41a988oldeuq5hk",
-      "user_id": "1e41a979cldalease",
-      "created_at": "2023-01-29T15:16:02.668Z"
-    },
-    {
-      "id": "1e41a963sldhj2p8k",
-      "type": "expense",
-      "name": "пирожок",
-      "sum": 80,
-      "account_id": "1e41a988oldeuq5hk",
-      "user_id": "1e41a979cldalease",
-      "created_at": "2023-01-29T15:19:40.099Z"
-    },
-    {
-      "id": "1e41a98cgldj0ruum",
-      "type": "income",
-      "name": "taxi",
-      "sum": 300,
-      "account_id": "1e41a9130ldex1dob",
-      "user_id": "1e41a979cldalease",
-      "created_at": "2023-01-30T16:22:53.421Z"
-    },
-    {
-      "id": "1e41a9am0ldj0syv9",
-      "type": "expense",
-      "name": "мороженко",
-      "sum": 50,
-      "account_id": "1e41a9130ldex1dob",
-      "user_id": "1e41a979cldalease",
-      "created_at": "2023-01-30T16:23:45.284Z"
-    },
-    {
       "id": "1e41a94isldj5mpga",
       "type": "income",
       "name": "Продал тапки",
@@ -345,15 +209,6 @@
       "account_id": "1e41a9130ldex1dob",
       "user_id": "1e41a979cldalease",
       "created_at": "2023-01-30T18:38:51.225Z"
-    },
-    {
-      "id": "1e41a97wldj5nssa",
-      "type": "expense",
-      "name": "купил тапки",
-      "sum": 50,
-      "account_id": "1e41a9130ldex1dob",
-      "user_id": "1e41a979cldalease",
-      "created_at": "2023-01-30T18:39:42.202Z"
     },
     {
       "id": "1e41a95l0ldj5qfvd",
@@ -365,22 +220,40 @@
       "created_at": "2023-01-30T18:41:45.432Z"
     },
     {
-      "id": "1e41a93agldj6cqnk",
+      "id": "1e41a91i0ldkhkqbj",
       "type": "income",
-      "name": "Заработал",
-      "sum": 500,
+      "name": "Перевод",
+      "sum": 125000,
       "account_id": "1e41a9130ldex1dob",
       "user_id": "1e41a979cldalease",
-      "created_at": "2023-01-30T18:59:05.839Z"
+      "created_at": "2023-01-31T17:01:00.606Z"
     },
     {
-      "id": "1e41a972wldj6fpce",
-      "type": "expense",
-      "name": "dog",
-      "sum": 100,
+      "id": "1e41a97rcldkhy8pe",
+      "type": "income",
+      "name": "dfb",
+      "sum": 3456,
       "account_id": "1e41a9130ldex1dob",
       "user_id": "1e41a979cldalease",
-      "created_at": "2023-01-30T19:01:24.109Z"
+      "created_at": "2023-01-31T17:11:30.961Z"
+    },
+    {
+      "id": "1e41a93toldkiawqn",
+      "type": "income",
+      "name": "лото",
+      "sum": 200,
+      "account_id": "1e41a9130ldex1dob",
+      "user_id": "1e41a979cldalease",
+      "created_at": "2023-01-31T17:21:21.982Z"
+    },
+    {
+      "id": "1e41a9b10ldkibf41",
+      "type": "expense",
+      "name": "пирожок",
+      "sum": 300,
+      "account_id": "1e41a9130ldex1dob",
+      "user_id": "1e41a979cldalease",
+      "created_at": "2023-01-31T17:21:45.792Z"
     }
   ]
 }

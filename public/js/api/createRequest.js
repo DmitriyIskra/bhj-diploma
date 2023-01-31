@@ -19,6 +19,16 @@ const createRequest = (options = {}) => {
             console.log(error);
         };
     }
+    else if(options.method === "DELETE") {
+        try{
+            xhr.open(options.method, options.url);
+
+            xhr.send(options.data);
+        }
+        catch(error) {
+            console.log(error);
+        };
+    }
     else if(options.method === "GET") {
 
         try{

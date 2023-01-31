@@ -50,5 +50,14 @@ class Entity {
    * */
   static remove(data, callback ) {
     // Метод посылает DELETE запрос на адрес, заданный URL. Метод запускает выполнение функции createRequest.
+    createRequest({
+      url: new this().URL,
+      method: 'DELETE',
+      responseType: 'json',
+      data,
+      callback: (err, response) => {
+        callback(err, response);
+      }
+    });
   }
 }
